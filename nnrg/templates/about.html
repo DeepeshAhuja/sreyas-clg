@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>About Us</title>
+<link rel="stylesheet" href="../static/css/about.css">
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+    </div>
+    <main class="container">
+    <div class="clg-img">
+        <img class="img" src="https://sreyas.ac.in/wp-content/uploads/2019/07/1-1024x504.jpg" alt="clg pic">
+    </div>
+    <div class="text">
+        <h3 class="hero__text" style="text-align: center;">College Overview</h3>
+    <p>The Campus is located at Nagole, the heart of the city of Hyderabad. The Campus is a stone's throw away from reputed media houses, service and IT Industry hubs. This is the result of deliberation and planning of every aspect to create a world-class technical education institution. The first impression as you enter the sprawling green and verdant campus of Sreyas leaves a lasting impression of innate calm and energizing growth</p>
+    <br>
+    <p>The campus is scientifically planned and artistically designed. The students have access to the latest software & computing facilities for learning and research to groom them into future citizens.</p>
+    <br>
+    <p>Our student-centric approach will ensure that Sreyans gain not just depth and breadth in their chosen area of specialization, but a holistic set of skills that will equip them to face the real world. At every stage, there will be opportunities to expand their boundaries, with multiple platforms for collaboration and learning. The infrastructure is absolutely world-class with opportunities to build practical skills in state-of-the-art laboratories & workshops. The thriving, vibrant campus with its multitude of activities will help them develop a well-rounded and grounded personality that evolves naturally.
+    </p>
+    <br>
+    <p>Finally, our intention is to ensure that every opportunity to learn is utilized to the maximum and the end goal is that the student transforms into an individual full of enthusiasm, confidence & knowledge to face global challenges, becoming both individually and professionally successful, as well as socially responsible.</p>
+    <br>
+    <p>This proximity helps us in attracting the beacons of the industry to our Campus for regular interactions with our students. The Campus is also the hub for many academic & professional activities making it pulsate with positive energy.</p>
+</div>
+<button>
+    Download Broucher
+</button>
+</main>
+{% endblock %} 

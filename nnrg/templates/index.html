@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Home Page - NNRG</title>
+<link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+    
+    </div>
+    <main class="container">
+            <div class="clg-img">
+                <img class="img" src="https://sreyas.ac.in/wp-content/uploads/2022/07/1000x550-copy-1.jpg" alt="clg pic">
+            </div>
+        <section class="explore__our__menu">
+                <div class="explore__menu__lists">
+                    <div class="food__card">
+                        <div class="food__card__description">
+                        <h3 class="hero__text">Notification</h3>
+                        <img src="../static/img/system-outline-46-notification-bell.gif" alt="Bell" class="food__image">
+                        </div>
+                        <br>
+                        <br>
+                            <div class="info">
+                        <p>Time tables of first years</p>
+                            <hr>
+                        <p>New Bus Transport Rules</p> 
+                            <hr>
+                        <p>Sreyas Campus Radio</p> 
+                            <hr>
+                        <p>Sreyas Bus App v1.05</p>
+                            </div>
+                    </div>
+                    
+                    <div class="food__card">
+                        <div class="food__card__description">
+                            <h3 class="hero__text">Achievements</h3>
+                            <img src="../static/img/system-outline-117-bolt.gif" alt="Bell" class="food__image">
+                            </div>
+                            <br>
+                            <br>
+                                <div class="info">
+                            <p>Sreyas Institute of Engineering and Technology was conferment as Autonomous dated 6th June 2022.</p>
+                                <hr>
+                            <p>Sreyas was accredited with NAAC - A grade dated 20th October 2021.</p>
+                                </div>
+                    </div>
+                    
+                    <div class="food__card">
+                            <div class="food__card__description">
+                                <h3 class="hero__text">Quick Links</h3>
+                                <img src="../static/img/system-outline-28-info.gif" alt="Bell" class="food__image">
+                                </div>
+                                <br>
+                                <br>
+                                    <div class="info">
+                                <p>Student & Faculty Login</p>
+                                    <hr>
+                                <p>JNTUH</p> 
+                                    <hr>
+                                <p>AICTE</p> 
+                                    <hr>
+                                <p>NPTEL</p>
+                                    </div>
+                </div>
+            </section>
+    </main>
+{% endblock %}

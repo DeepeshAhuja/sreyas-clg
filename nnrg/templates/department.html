@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Department</title>
+<link rel="stylesheet" href="../static/css/style.css">
+
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+    
+    </div>
+
+    <div class="CSE">
+        <h3 class="hero__text">Department Of CSE</h3>
+        <p></p>
+
+    </div>
+{% endblock %}
