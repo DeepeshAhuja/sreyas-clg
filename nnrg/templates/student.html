@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>About Us</title>
+<link rel="stylesheet" href="../static/css/stud.css">
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+</div>
+    <div>
+        <form action="/membership" method="POST">
+            <h1><u> On - Boarding Form</u></h1>
+            <label for="name">First Name</label>
+            <input type="text" id="name" name="fname" required>
+
+
+            <label for="name">Last Name</label>
+            <input type="text" id="name" name="lname" required>
+
+            <label for="date">Date of Birth:</label>
+            <input type="date" id="date" name="date"><br><br>
+
+            <label for="email">Email:</label>
+            <label>{{session['email']}}</label>
+            <br>
+
+            <label>Branch:</label>
+            <input type="radio" id="CSE" name="CSE" value="CSE">
+            <label for="CSE" class="radio-label">CSE</label>
+            <input type="radio" id="CSEAIML" name="CSE-AIML" value="CSE-AIML">
+            <label for="CSEAIML" class="radio-label">CSE-AIML</label>
+            <input type="radio" id="CSEDS" name="CSE-DS" value="CSE-DS">
+            <label for="CSEDS" class="radio-label">CSE-DS</label><br><br><br>
+
+            <label>City:</label>
+            <input type="radio" id="hyd" name="hyd" value="hyd">
+            <label for="hyd" class="radio-label">Hyderabad</label>
+            <input type="radio" id="mum" name="mum" value="mum">
+            <label for="mum" class="radio-label">Warangal</label>
+            <input type="radio" id="ap" name="ap" value="ap">
+            <label for="ap" class="radio-label">Andhra Pradesh</label><br><br><br>
+
+
+            <label for="name">Father Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="name">Mother Name:</label>
+            <input type="text" id="mname" name="mname" required>
+
+            <label for="fphone">Father Phone Number:</label>
+            <input type="tel" id="fphone" name="fphone" required>
+
+            <label for="mphone">Mother Phone Number:</label>
+            <input type="tel" id="mphone" name="pmhone" required>
+
+            <label for="email">Father Email:</label>
+            <label>{{session['email']}}</label>
+            <br>
+
+            <label for="email">Mother Email:</label>
+            <label>{{session['email']}}</label>
+            <br>
+
+            <label>Interested Games:</label><br>
+            <input type="checkbox" id="Cricket" name="Cricket" value="Cricket">
+            <label for="Cricket" class="radio-label"></label>Cricket<br><br>
+
+            <input type="checkbox" id="Football" name="Football" value="Football">
+            <label for="Football" class="radio-label">Football</label><br><br>
+
+            <input type="checkbox" id="Basketball" name="Basketball" value="Basketball">
+            <label for="Basketball" class="radio-label">Basketball</label><br><br>
+
+            <input type="checkbox" id="TableTennis" name="TableTennis" value="TableTennis">
+            <label for="TableTennis" class="radio-label">Table Tennis</label><br><br>
+
+            <input type="checkbox" id="Chess" name="Chess" value="Chess">
+            <label for="Chess" class="radio-label">Chess</label><br><br>
+
+            <label for=""><b>Hobbies:</b></label><br>
+
+            <label for="plan1" class="radio-label">
+    <input type="checkbox" id="plan1" name="membership" value="writing">
+    Writing
+  </label><br><br>
+
+            <label for="plan2" class="radio-label">
+    <input type="checkbox" id="plan2" name="membership" value="reading">
+    Reading
+  </label><br><br>
+
+            <label for="plan3" class="radio-label">
+    <input type="checkbox" id="plan3" name="membership" value="watching">
+    Watching
+  </label><br><br>
+
+            <label for="plan4" class="radio-label">
+      <input type="checkbox" id="plan4" name="membership" value="gaming">
+      Gaming
+  </label><br><br>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+{% endblock %} 

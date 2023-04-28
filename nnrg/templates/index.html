@@ -11,7 +11,8 @@
         <ul>
     <li><a href="{{url_for('index')}}">Home</a></li>
     <li><a href="{{url_for('aboutus')}}">About Us</a></li>
-    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('department')}}">Department</a>
+    </li>
     <li><a href="{{url_for('contact')}}">Contact us</a></li>
     <li>{% block z %}
         {% if session.email %}
@@ -43,13 +44,13 @@
                         <br>
                         <br>
                             <div class="info">
-                        <p>Time tables of first years</p>
+                        <p><a class="link" href="../static/pdf/Timetable-I-Year-II-Semester-AY-2022-23.pdf">Time tables of first years</a></p>
                             <hr>
-                        <p>New Bus Transport Rules</p> 
+                        <p><a class="link"href="../static/pdf/TRANSPORT-BUS-ROUTS-22-11-2021.pdf" target="_blank">New Bus Transport Rules</a></p> 
                             <hr>
-                        <p>Sreyas Campus Radio</p> 
+                        <p><a class="link" href="https://play.google.com/store/apps/details?id=com.atiivanns.younify&hl=en_IN">Sreyas Campus Radio</a></p> 
                             <hr>
-                        <p>Sreyas Bus App v1.05</p>
+                        <p><a class="link" href="https://play.google.com/store/apps/details?id=com.neemiit.sreyasapp">Sreyas Bus App v1.05</a></p>
                             </div>
                     </div>
                     
@@ -75,13 +76,13 @@
                                 <br>
                                 <br>
                                     <div class="info">
-                                <p>Student & Faculty Login</p>
+                                <p> <a class="link" href="{{url_for('login')}}" > Student & Faculty Login</a></p>
                                     <hr>
-                                <p>JNTUH</p> 
+                                <p> <a class="link" href="https://www.jntuh.ac.in/" target="_blank"> JNTUH</a></p> 
                                     <hr>
-                                <p>AICTE</p> 
+                                <p> <a class="link" href="https://www.aicte-india.org/" target="_blank"> AICTE</a></p> 
                                     <hr>
-                                <p>NPTEL</p>
+                                <p> <a class="link" href="https://nptel.ac.in/" target="_blank"> NPTEL</a></p>
                                     </div>
                 </div>
             </section>

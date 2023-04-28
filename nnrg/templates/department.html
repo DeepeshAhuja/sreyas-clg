@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block head %}
 <title>Department</title>
-<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/department.css">
 
 {% endblock %}
 {% block body %}
@@ -30,17 +30,14 @@
     </nav>
     
     </div>
-
-    <div class="CSE">
-        <h3 class="hero__text1">Department Of CSE</h3>
-        <!-- <p>Program is an intellectually challenging discipline. This study will provide you with a strong foundation of knowledge in problem-solving and logical thinking. Some of the areas of study are algorithms and data structures, programming languages, software engineering, database systems, operating systems to name a few. A record number of jobs being created in computer science-related fields.
-
-            UG Program was established in the year 2011.</p>
+    <div class="clg-img">
+        <img class="img" src="../static/img/cse.jpg" alt="clg pic">
+    </div>
+    <div class="text">
+        <h1><a class="link" href="{{url_for('cse')}}">Computer Science and Engineering</a></h1>
         <br>
-        <p>Current student intake –</p>
-        
+        <h1><a class="link" href="{{url_for('aiml')}}">Artifical Intelligence and Machine Learning</a></h1>
         <br>
-        <p> B. Tech Program in Computer Science and Engineering has an intake of 240 students.</p> -->
-
+        <h1><a class="link" href="{{url_for('ds')}}">Data Science</a></h1>
     </div>
 {% endblock %}

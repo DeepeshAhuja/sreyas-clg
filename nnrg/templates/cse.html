@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Department</title>
+<link rel="stylesheet" href="../static/css/cse.css">
+
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+    
+    </div>
+
+    <div class="CSE">
+        <h1><a class="link" href="{{url_for('aiml')}}">Artifical Intelligence and Machine Learning</a></h1>
+        <br>
+        <h1><a class="link" href="{{url_for('ds')}}">Data Science</a></h1>
+        <div class="clg-img">
+            <img class="img" src="../static/img/cse.jpg" alt="clg pic">
+        </div>
+        <div class="text">
+            <h3 class="hero__text1" style="text-align: center;">Computer Science Overview</h3>
+            <p>Computer Science and Engineering (CSE) Program is an intellectually challenging discipline. This study will provide you with a strong foundation of knowledge in problem-solving and logical thinking. Some of the areas of study are algorithms and
+                data structures, programming languages, software engineering, database systems, operating systems to name a few. A record number of jobs being created in computer science-related fields.</p>
+            <br>
+            <p>UG Program was established in the year 2011.</p>
+            <br>
+            <p>Seminars are an integral part of our academic programs and conducted every week. It acts as a means for students to deliberate on subjects from technical to current affairs and even inspiring videos are screened. Student-initiated clubs which
+                are intended to generate curiosity in young minds and promoting intelligent designs to help solving some of the problems in our daily life. Organizing and conducting technical events like Code champ, hackathon competitions will enhance and
+                showcase the coding abilities of the students.
+            </p>
+            <br>
+            <p>Our students undergo entrepreneurship and inventiveness workshops, coding sessions, and hackathons, which strive to be the most innovative in the world. In an increasingly competitive job market, CSE students have excellent options for a secure
+                future & Jobs. They have demonstrated & sustained success by securing jobs in top MNCs</p>
+            <br>
+            <p>Join this exclusive group for shaping and changing your future! </p>
+            <br>
+            <br>
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Department</title>
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/cseaiml.css">
+
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+    
+    </div>
+
+    <div class="CSE">
+        <h1><a class="link" href="{{url_for('aiml')}}">Artifical Intelligence and Machine Learning</a></h1>
+        <br>
+        <h1><a class="link" href="{{url_for('ds')}}">Data Science</a></h1>
+        <div class="clg-img">
+            <img class="img" src="../static/img/aiml.jpg" alt="clg pic">
+        </div>
+        <div class="text">
+            <h3 class="hero__text1" style="text-align: center;">Computer Science - AI and ML Overview</h3>
+            <p>The 4-year B.Tech program in Artificial Intelligence and Machine Learning (AIML) focuses on complex inputs and outputs that are used to make decisions or enhance human capabilities.</p>
+            <br>
+            <p>The Artificial Intelligence degree offers courses that span across computer science, AI/machine learning, mathematics/statistics, computational modeling skills, domain knowledge and neural networks. The AIML degree will prepare students to stand out in one of the worlds fastest-growing careers.</p>
+            <br>
+            <p>Graduate of B.Tech in CSE (AIML) will acquire computer science skills with the added expertise in artificial intelligence and machine learning to work across many sectors, including medicine, finance, robotics, and business intelligence.
+            </p>
+            <br>
+            <p>Machine Learning is a subset of artificial intelligence closely related to computational statistics which focuses on making predictions using computers. Machine learning algorithms are used in a wide variety of applications, such as email filtering and computer vision, where it is difficult or infeasible to develop conventional algorithms to perform the needed tasks.</p>
+            <br>
+            <p>Its time to learn the future technology! </p>
+            <br>
+            <br>
+            
+        </div>
+    </div>
+{% endblock %}

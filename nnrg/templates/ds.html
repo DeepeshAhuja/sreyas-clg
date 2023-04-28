@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Department</title>
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="../static/css/cseds.css">
+
+{% endblock %}
+{% block body %}
+<div class="bg-div">
+    <a href="{{url_for('index')}}"><img class="logo-img" height="22" width="22"  src="https://sreyas.ac.in/wp-content/uploads/2022/03/sreyas-college-logo-.png" alt="icon"></a>
+    <!-- <a class="web-name" href="{{url_for('index')}}">Fit360</a>  -->
+    <nav>
+        <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('aboutus')}}">About Us</a></li>
+    <li><a href="{{url_for('department')}}">Department</a></li>
+    <li><a href="{{url_for('contact')}}">Contact us</a></li>
+    <li>{% block z %}
+        {% if session.email %}
+            <a href="/profile">Profile</a>
+        {% endif %}
+    {% endblock %}</li>
+    <li>{% block y %}
+    {% if session.email %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    {% endblock %}</li>
+    </ul>
+    </nav>
+    
+    </div>
+
+    <div class="CSE">
+        <h1><a class="link" href="{{url_for('aiml')}}">Artifical Intelligence and Machine Learning</a></h1>
+        <br>
+        <h1><a class="link" href="{{url_for('ds')}}">Data Science</a></h1>
+        <div class="clg-img">
+            <img class="img" src="../static/img/ds.jpg" alt="clg pic">
+        </div>
+        <div class="text">
+            <h3 class="hero__text1" style="text-align: center;">Computer Science - AI and ML Overview</h3>
+            <p>Daily we are generating more data than ever before, in this wealth of data lies insights that will change the world in unimaginable ways. The 4-year B.Tech program in Data Science will give tools and skills to analyze data and draw deeper insights; thus, make better evidence-based business decisions.</p>
+            <br>
+            <p>The Data Science degree offers courses that span across computer science, AI/machine learning, mathematics/statistics, modeling skills, domain knowledge and more. The Data Science degree will prepare students to stand out in one of the worlds fastest-growing careers.</p>
+            <br>
+            <p>Big data is very quickly becoming a vital tool for businesses and companies of all sizes. Data scientists are responsible for breaking down big data into usable information and creating software and algorithms that help companies and organizations determine optimal operations.
+            </p>
+            <br>
+            <p>Graduates of B.Tech in CSE (Data Science) will be well-prepared to work across many sectors, including medicine, finance, robotics, and business intelligence.</p>
+            <br>
+            <p>Popular employers: Google, Facebook, Amazon, IBM, Accenture, Ernst & Young, TCS, JP Morgan, Citigroup</p>
+            <br>
+            <br>
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,19 +1,19 @@
 @import "style.css";
-
-.text{
+.text {
     width: 80%;
     margin: 0 auto;
     text-align: left;
     font-size: 15px;
-    background-color: #ebf2ff;;
+    background-color: #ebf2ff;
+    ;
     font-family: 'Merriweather', serif;
 }
 
-.bro{
+.bro {
     text-align: center;
 }
 
-.broucher{
+.broucher {
     background-color: #002e5b;
     color: white;
     text-decoration: none;
@@ -24,5 +24,5 @@
 .broucher:hover {
     /* background-position: right center; */
     border: 2px solid #002e5b;
-    cursor:pointer;
+    cursor: pointer;
 }
